@@ -14,5 +14,9 @@ export async function login({ userName, password }) {
         }
     })
 
-    return await response.text()
+    const responseText = await response.text()
+
+    if (response.status !== 200) throw new Error(responseText)
+
+    return responseText
 }
