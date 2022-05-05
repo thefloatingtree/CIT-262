@@ -1,0 +1,13 @@
+steps:
+  - name: "gcr.io/cloud-builers/docker"
+    id: Build
+    args:
+      - "build"
+      - "-t"
+      - "gcr.io/$Project_ID/stedi-tests-jacob:latest"
+      - "."
+  - name: "gcr.io/cloud-builers/docker"
+    id: Push
+    args:
+      - "push"
+      - "gcr.io/$Project_ID/stedi-tests-jacob:latest"
