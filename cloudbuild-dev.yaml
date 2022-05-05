@@ -1,12 +1,12 @@
 steps:
-  - name: "gcr.io/cloud-builers/docker"
+  - name: "gcr.io/cloud-builders/docker"
     id: Build
     args:
       - "build"
       - "-t"
       - "gcr.io/$PROJECT_ID/stedi-tests-jacob:latest"
       - "."
-  - name: "gcr.io/cloud-builers/docker"
+  - name: "gcr.io/cloud-builders/docker"
     id: Push
     args:
       - "push"
