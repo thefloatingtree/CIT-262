@@ -21,10 +21,10 @@ spec:
             - containerPort: 3000
           resources:
             limits:
-              cpu: ".5"
+              cpu: ".125"
               memory: "500Mi"
             requests:
-              cpu: ".25"
+              cpu: ".1"
               memory: "250Mi"
           livenessProbe:
             httpGet:
@@ -32,3 +32,5 @@ spec:
               port: 3000
             initialDelaySeconds: 3
             periodSeconds: 3
+          command: ["yarn"]
+          args: ["start"]
