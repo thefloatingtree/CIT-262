@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "mocha",
-    "start": "node server.js",
+    "start": "node ./web/build/index.js",
     "dev": "node server.js"
   },
   "dependencies": {

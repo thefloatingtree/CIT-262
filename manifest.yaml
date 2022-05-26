@@ -34,3 +34,17 @@ spec:
             periodSeconds: 3
           command: ["yarn"]
           args: ["start"]
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: jacob-perry-stedi-loadbalancer
+spec:
+  selector:
+    app: jacob-perry-stedi
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 3000
