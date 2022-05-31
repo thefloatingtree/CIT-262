@@ -1,1 +1,1 @@
-Hello Mum
+<div class="text-blue-500">Hello Mum</div>

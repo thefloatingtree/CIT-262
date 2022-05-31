@@ -1,18 +1,26 @@
 steps:
-  - name: "gcr.io/cloud-builders/docker"
+  - name: gcr.io/cloud-builders/docker
     id: Build
     args:
-      - "build"
-      - "-t"
-      - "gcr.io/$PROJECT_ID/stedi-jacob:latest"
-      - "."
-  - name: "gcr.io/cloud-builders/docker"
+      - build
+      - -t
+      - gcr.io/$PROJECT_ID/stedi-jacob:latest
+      - .
+  - name: gcr.io/cloud-builders/docker
     id: Push
     args:
-      - "push"
-      - "gcr.io/$PROJECT_ID/stedi-jacob:latest"
-  - name: "gcr.io/cloud-builders/docker"
-    id: Run
+      - push
+      - gcr.io/$PROJECT_ID/stedi-jacob:latest
+  - name: gcr.io/cloud-builders/gke-deploy
+    id: Deploy
     args:
-      - "run"
-      - "gcr.io/$PROJECT_ID/stedi-jacob:latest"
+    - run
+    - --filename=manifest.yaml
+    - --image=gcr.io/$PROJECT_ID/stedi-jacob:latest
+    - --location=us-west1-b
+    - --cluster=cluster-2
+  - name: gcr.io/cloud-builders/docker
+    id: Test
+    args:
+      - run
+      - gcr.io/$PROJECT_ID/stedi-jacob:latest
