@@ -5,6 +5,8 @@
     "dev": "node server.js"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "chai": "^4.3.6",
     "express": "^4.18.1",
     "mocha": "^9.2.2",
     "node-fetch": "^3.2.4"

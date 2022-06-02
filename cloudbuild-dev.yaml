@@ -19,7 +19,6 @@ steps:
     - --image=gcr.io/$PROJECT_ID/stedi-jacob:latest
     - --location=us-west1-b
     - --cluster=cluster-2
-    
   - name: gcr.io/cloud-builders/docker
     id: Test
     args:
