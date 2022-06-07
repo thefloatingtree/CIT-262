@@ -3,7 +3,9 @@ import axios from 'axios'
 
 chai.should()
 
-it('Should login', async () => {
-    const response = await axios.post("http://34.82.151.184/api/login", { username: "thefloatingtree@gmail.com", password: "oatmeal" })
-    response.status.should.equal(200)
+describe('Login', () => {
+    it('Should respond with 200', async () => {
+        const response = await axios.post("http://34.82.151.184/api/login", { username: "thefloatingtree@gmail.com", password: "oatmeal" })
+        response.status.should.equal(200)
+    })
 })
