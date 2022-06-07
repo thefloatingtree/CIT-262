@@ -11,6 +11,11 @@ steps:
     args:
       - push
       - gcr.io/$PROJECT_ID/stedi-jacob:latest
+  - name: gcr.io/cloud-builders/docker
+    id: Test
+    args:
+      - run
+      - gcr.io/$PROJECT_ID/stedi-jacob:latest
   - name: gcr.io/cloud-builders/gke-deploy
     id: Deploy
     args:
@@ -19,8 +24,3 @@ steps:
       - --image=gcr.io/$PROJECT_ID/stedi-jacob:latest
       - --location=us-west1-b
       - --cluster=cluster-2
-  - name: gcr.io/cloud-builders/docker
-    id: Test
-    args:
-      - run
-      - gcr.io/$PROJECT_ID/stedi-jacob:latest
