@@ -20,5 +20,7 @@ steps:
       - --location=us-west1-b
       - --cluster=cluster-2
   - name: 'gcr.io/cloud-builders/yarn'
+    args: ['install']
+  - name: 'gcr.io/cloud-builders/yarn'
     id: Test
     args: ['test']
