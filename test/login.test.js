@@ -1,4 +1,3 @@
-import fetch from 'node-fetch'
 import chai from 'chai'
 import axios from 'axios'
 
