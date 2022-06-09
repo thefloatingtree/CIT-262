@@ -5,7 +5,7 @@ kind: Deployment
 metadata:
   name: jacob-perry-stedi
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: jacob-perry-stedi
