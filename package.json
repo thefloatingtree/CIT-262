@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --timeout 30000",
     "readiness": "node ./util/serverReadinessCheck.js",
     "start": "node ./web/build/index.js",
     "dev": "node server.js"
