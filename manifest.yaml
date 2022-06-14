@@ -48,6 +48,11 @@ kind: Service
 metadata:
   name: jacob-perry-stedi-loadbalancer
 spec:
+  healthCheck:
+    checkIntervalSeconds: 5
+    timeoutSeconds: 3
+    unhealthyThreshold: 3
+    healthyThreshold: 3
   selector:
     app: jacob-perry-stedi
   type: LoadBalancer
