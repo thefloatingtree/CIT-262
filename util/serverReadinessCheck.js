@@ -15,11 +15,10 @@ async function run() {
     let serverIsReady = await checkServer()
     if (!serverIsReady) {
         console.log("Server is not ready yet, waiting...")
-        setTimeout(() => {
-            run()
-        }, 500)
+        await new Promise(resolve => setTimeout(resolve, 500))
+        await run()
     }
-    console.log("Server is ready!")
+    return console.log("Server is ready!")
 }
 
 run()
